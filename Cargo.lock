@@ -194,7 +194,7 @@ checksum = "104a23e4e8b77312a823b6b5613edbac78397e2f34320bc7ac4277013ec4478e"
 
 [[package]]
 name = "rustcrypto-ff"
-version = "0.14.0-pre"
+version = "0.14.0-pre.0"
 dependencies = [
  "bitvec",
  "blake2b_simd",
@@ -207,7 +207,7 @@ dependencies = [
 
 [[package]]
 name = "rustcrypto-ff_derive"
-version = "0.14.0-pre"
+version = "0.14.0-pre.0"
 dependencies = [
  "addchain",
  "num-bigint",
