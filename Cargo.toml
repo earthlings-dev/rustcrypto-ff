@@ -18,12 +18,12 @@ repository = "https://github.com/RustCrypto/ff"
 bitvec = { version = "1", default-features = false, optional = true }
 byteorder = { version = "1", default-features = false, optional = true }
 ff_derive = { version = "=0.14.0-pre.0", package = "rustcrypto-ff_derive", path = "ff_derive", optional = true }
-rand_core = { version = "0.10.0-rc-6", default-features = false }
+rand_core = { version = "0.10", default-features = false }
 subtle = { version = "2.2.1", default-features = false, features = ["i128"] }
 
 [dev-dependencies]
 blake2b_simd = "1"
-rand = "0.10.0-rc.1"
+rand = "0.10.0-rc.8"
 
 [features]
 default = ["bits", "std"]
@@ -45,4 +45,3 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [patch.crates-io.rand]
 git = "https://github.com/rust-random/rand"
-branch = "rand_core/v0.10.0-rc-6"
