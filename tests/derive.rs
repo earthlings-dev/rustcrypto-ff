@@ -19,6 +19,17 @@ mod fermat {
     #[PrimeFieldGenerator = "3"]
     #[PrimeFieldReprEndianness = "little"]
     struct Fermat65537Field([u64; 1]);
+
+    #[test]
+    fn sqrt_fermat_prime() {
+        use ff::Field;
+
+        // Exercise the t = 1 edge case in Tonelli-Shanks.
+        let square_root = Fermat65537Field::random(&mut rand::rng());
+        let square = square_root.square();
+        let recovered = square.sqrt().unwrap();
+        assert_eq!(recovered.square(), square);
+    }
 }
 
 mod full_limbs {
@@ -58,13 +69,13 @@ fn constants() {
 
     // ROOT_OF_UNITY^{2^s} mod m == 1
     assert_eq!(
-        Bls381K12Scalar::ROOT_OF_UNITY.pow(&[1u64 << Bls381K12Scalar::S, 0, 0, 0]),
+        Bls381K12Scalar::ROOT_OF_UNITY.pow([1u64 << Bls381K12Scalar::S, 0, 0, 0]),
         Bls381K12Scalar::ONE,
     );
 
     // DELTA^{t} mod m == 1
     assert_eq!(
-        Bls381K12Scalar::DELTA.pow(&[
+        Bls381K12Scalar::DELTA.pow([
             0xfffe5bfeffffffff,
             0x09a1d80553bda402,
             0x299d7d483339d808,

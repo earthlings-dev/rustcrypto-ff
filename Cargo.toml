@@ -1,3 +1,35 @@
+[workspace]
+members = ["ff_derive"]
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.93.0"
+
+[workspace.dependencies]
+# Internal
+ff_derive = { version = "0.14.0-rc.0", package = "rustcrypto-ff_derive", path = "ff_derive" }
+
+# External
+addchain = { version = "0.2", path = "../addchain" }
+bitvec = { version = "1", default-features = false }
+blake2b_simd = "1"
+byteorder = { version = "1", default-features = false }
+getrandom = { version = "0.4", path = "../getrandom" }
+num-bigint = { version = "0.4", path = "../num-bigint" }
+num-integer = "0.1"
+num-traits = "0.2"
+proc-macro2 = "1"
+quote = "1"
+rand = { version = "0.10", path = "../rand" }
+rand_core = { version = "0.10", default-features = false, path = "../rand_core" }
+subtle = { version = "2.6.1", default-features = false, features = ["i128"] }
+syn = { version = "2", features = ["full"] }
+
+[patch.crates-io]
+getrandom = { path = "../getrandom" }
+rand = { path = "../rand" }
+rand_core = { path = "../rand_core" }
+
 [package]
 name = "rustcrypto-ff"
 version = "0.14.0-rc.0"
@@ -5,8 +37,8 @@ authors = [
     "Sean Bowe <ewillbefull@gmail.com>",
     "Jack Grigg <thestr4d@gmail.com>",
 ]
-edition = "2021"
-rust-version = "1.85"
+edition.workspace = true
+rust-version.workspace = true
 description = "Library for building and interfacing with finite fields"
 readme = "README.md"
 documentation = "https://docs.rs/rustcrypto-ff/"
@@ -15,15 +47,15 @@ license = "MIT/Apache-2.0"
 repository = "https://github.com/RustCrypto/ff"
 
 [dependencies]
-bitvec = { version = "1", default-features = false, optional = true }
-byteorder = { version = "1", default-features = false, optional = true }
-ff_derive = { version = "0.14.0-rc.0", package = "rustcrypto-ff_derive", path = "ff_derive", optional = true }
-rand_core = { version = "0.10", default-features = false }
-subtle = { version = "2.2.1", default-features = false, features = ["i128"] }
+bitvec = { workspace = true, optional = true }
+byteorder = { workspace = true, optional = true }
+ff_derive = { workspace = true, optional = true }
+rand_core = { workspace = true }
+subtle = { workspace = true }
 
 [dev-dependencies]
-blake2b_simd = "1"
-rand = "0.10.0-rc.8"
+blake2b_simd = { workspace = true }
+rand = { workspace = true }
 
 [features]
 default = ["bits", "std"]
@@ -42,6 +74,3 @@ maintenance = { status = "actively-developed" }
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
-
-[patch.crates-io.rand]
-git = "https://github.com/rust-random/rand"
