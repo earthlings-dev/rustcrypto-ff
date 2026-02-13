@@ -5,6 +5,7 @@ version = 4
 [[package]]
 name = "addchain"
 version = "0.2.0"
+source = "git+https://github.com/earthlings-dev/addchain.git#d351103461c759ee2041d313aade8899786b4b11"
 dependencies = [
  "num-bigint",
  "num-integer",
@@ -123,6 +124,7 @@ checksum = "e6d5a32815ae3f33302d95fdcb2ce17862f8c65363dcfd29360480ba1001fc9c"
 [[package]]
 name = "getrandom"
 version = "0.4.1"
+source = "git+https://github.com/earthlings-dev/getrandom.git#adb317c5b348be1ace632d72421e23285f578b36"
 dependencies = [
  "cfg-if",
  "libc",
@@ -204,6 +206,7 @@ checksum = "f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79"
 [[package]]
 name = "num-bigint"
 version = "0.4.6"
+source = "git+https://github.com/earthlings-dev/num-bigint.git#8c42246d2b8a8b65b07a3b5772b286da3c401709"
 dependencies = [
  "num-integer",
  "num-traits",
@@ -270,6 +273,7 @@ checksum = "dc33ff2d4973d518d823d61aa239014831e521c75da58e3df4840d3f47749d09"
 [[package]]
 name = "rand"
 version = "0.10.0"
+source = "git+https://github.com/earthlings-dev/rand.git#88e3e32ee88a7ed6f547618eaf2d5a8a315fa7e7"
 dependencies = [
  "chacha20",
  "getrandom",
@@ -279,6 +283,7 @@ dependencies = [
 [[package]]
 name = "rand_core"
 version = "0.10.0"
+source = "git+https://github.com/earthlings-dev/rand_core.git#9526dcf2b97f7a22fdaa62d4100777180f4c3ac4"
 
 [[package]]
 name = "rustcrypto-ff"

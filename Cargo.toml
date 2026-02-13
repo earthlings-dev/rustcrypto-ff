@@ -10,25 +10,25 @@ rust-version = "1.93.0"
 ff_derive = { version = "0.14.0-rc.0", package = "rustcrypto-ff_derive", path = "ff_derive" }
 
 # External
-addchain = { version = "0.2", path = "../addchain" }
+addchain = { version = "0.2", git = "https://github.com/earthlings-dev/addchain.git" }
 bitvec = { version = "1", default-features = false }
 blake2b_simd = "1"
 byteorder = { version = "1", default-features = false }
-getrandom = { version = "0.4", path = "../getrandom" }
-num-bigint = { version = "0.4", path = "../num-bigint" }
+getrandom = { version = "0.4", git = "https://github.com/earthlings-dev/getrandom.git" }
+num-bigint = { version = "0.4", git = "https://github.com/earthlings-dev/num-bigint.git" }
 num-integer = "0.1"
 num-traits = "0.2"
 proc-macro2 = "1"
 quote = "1"
-rand = { version = "0.10", path = "../rand" }
-rand_core = { version = "0.10", default-features = false, path = "../rand_core" }
+rand = { version = "0.10", git = "https://github.com/earthlings-dev/rand.git" }
+rand_core = { version = "0.10", default-features = false, git = "https://github.com/earthlings-dev/rand_core.git" }
 subtle = { version = "2.6.1", default-features = false, features = ["i128"] }
 syn = { version = "2", features = ["full"] }
 
 [patch.crates-io]
-getrandom = { path = "../getrandom" }
-rand = { path = "../rand" }
-rand_core = { path = "../rand_core" }
+getrandom = { git = "https://github.com/earthlings-dev/getrandom.git" }
+rand = { git = "https://github.com/earthlings-dev/rand.git" }
+rand_core = { git = "https://github.com/earthlings-dev/rand_core.git" }
 
 [package]
 name = "rustcrypto-ff"
